@@ -1,0 +1,39 @@
+name: Repair request
+description: Request a narrow same-day repair scope.
+title: "[Repair]: "
+labels: ["intake"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share only public URLs, public repo links, or files/data you are allowed to disclose.
+  - type: input
+    id: target
+    attributes:
+      label: Target URL or repo
+      description: Public page, repository, or concise description of the file/data shape.
+      placeholder: https://example.com/pricing
+    validations:
+      required: true
+  - type: dropdown
+    id: offer
+    attributes:
+      label: Requested offer
+      options:
+        - Website triage ($49 USDC)
+        - Data cleanup ($79 USDC)
+        - Patch plan ($99 USDC)
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is broken, confusing, repetitive, or expensive right now?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What would make the deliverable useful enough to accept?
